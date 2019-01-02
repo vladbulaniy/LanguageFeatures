@@ -14,5 +14,6 @@ namespace LanguageFeatures.Models
             set { name = value; }
         }
         public int Price { get; set; }
+        public string Category { get; set; }
     }
 }
