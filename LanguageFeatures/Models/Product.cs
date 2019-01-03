@@ -13,7 +13,7 @@ namespace LanguageFeatures.Models
             get { return name; }
             set { name = value; }
         }
-        public int Price { get; set; }
+        public decimal Price { get; set; }
         public string Category { get; set; }
     }
 }

@@ -43,12 +43,18 @@ namespace LanguageFeatures.Controllers
             IEnumerable<Product> products = new ShoppingCart
             {
                 Products = new List<Product> {
-                    new Product { Name = "Kayak", Category = "Watersports", Price = 275 },
-                    new Product { Name = "Lifejacket", Category = "Watersports", Price = 48 },
-                    new Product { Name = "Soccer ball", Category = "Soccer", Price = 19 },
-                    new Product { Name = "Corner flag", Category = "Soccer", Price = 34 }
+                    new Product { Name = "Kayak", Category = "Watersports", Price = 275.52m },
+                    new Product { Name = "Lifejacket", Category = "Watersports", Price = 48.43m },
+                    new Product { Name = "Soccer ball", Category = "Soccer", Price = 19.75m },
+                    new Product { Name = "Corner flag", Category = "Soccer", Price = 34.24m }
                 }
             };
+            //Func<Product, bool> categoryFilter = delegate (Product prod) {
+            //    return prod.Category == "Soccer";
+            //};
+
+            Func<Product, bool> categoryFilter = prod => prod.Category == "Soccer";
+
             decimal total = 0;
             foreach (Product prod in products.FilterByCategory("Soccer"))
             {
