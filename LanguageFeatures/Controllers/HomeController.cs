@@ -79,6 +79,19 @@ namespace LanguageFeatures.Controllers
             }
             return View("Result", (object)result.ToString());
         }
+
+        public ViewResult RazerIndex()
+        {
+            Product product = new Product
+            {
+                ProductId = 1,
+                Name = "Kayak",
+                Description = "A boat for one person",
+                Category = "Watersport",
+                Price = 275.67m
+            };
+            return View(product);
+        }
     }
 }
 
